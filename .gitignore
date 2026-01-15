@@ -1,0 +1,4 @@
+Backend/aws_env/*
+Frontend/node_modules/*
+Frontend/public/*
+aws_env/*
