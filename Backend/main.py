@@ -1,5 +1,5 @@
 from bedrock_agentcore.runtime import BedrockAgentCoreApp
-from agent.sql_agent import SQLQueryExecutor
+from Backend.agent.sql_agent import SQLQueryExecutor
 import logging
 import json
 

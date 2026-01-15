@@ -2,10 +2,10 @@ import re
 import logging
 from strands import Agent
 from strands.models import BedrockModel
-from tools.athena_query import athena_query
-from memory.memory_setup import client, memory_id
-from memory.memory_hook import MemoryHookProvider
-from agent.prompt import base_prompt, customer_schema_prompt, insurance_schema_prompt
+from Backend.tools.athena_query import athena_query
+from Backend.memory.memory_setup import client, memory_id
+from Backend.memory.memory_hook import MemoryHookProvider
+from Backend.agent.prompt import base_prompt, customer_schema_prompt, insurance_schema_prompt
 import json
 
 logger = logging.getLogger(__name__)
