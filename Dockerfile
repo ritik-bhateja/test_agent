@@ -12,9 +12,9 @@ ENV UV_SYSTEM_PYTHON=1 \
 
 
 
-COPY Backend/requirements.txt Backend/requirements.txt
+COPY Backend/requirements.txt Backend/requirements123.txt
 # Install from requirements file
-RUN uv pip install -r Backend/requirements.txt
+RUN uv pip install -r Backend/requirements123.txt
 
 
 
