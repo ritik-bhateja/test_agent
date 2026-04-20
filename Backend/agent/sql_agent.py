@@ -11,7 +11,7 @@ import json
 logger = logging.getLogger(__name__)
 
 class SQLQueryExecutor:
-    def __init__(self, actor_id='actor_123', session_id='session_123', region='ap-south-1', model_id='apac.anthropic.claude-sonnet-4-20250514-v1:0'):
+    def __init__(self, actor_id='actor_123', session_id='session_123', region='ap-south-1', model_id='moonshotai.kimi-k2.5'):
         logger.info("🚀 Initializing SQLQueryExecutor...")
         logger.info(f"📍 Region: {region}, Model ID: {model_id}")
 
