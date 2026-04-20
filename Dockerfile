@@ -27,7 +27,7 @@ RUN apt-get update && \
 RUN pip install --no-cache-dir boto3
 
 # User
-RUN useradd -m -u 1000 bedrock_agentcore
+# RUN useradd -m -u 1000 bedrock_agentcore
 USER bedrock_agentcore
 
 COPY . .
