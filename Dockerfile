@@ -30,7 +30,7 @@ RUN pip install --no-cache-dir boto3
 RUN useradd -m -u 1000 bedrock_agentcore
 USER bedrock_agentcore
 
-COPY . .
+COPY --chown=bedrock_agentcore:bedrock_agentcore . .
 
 EXPOSE 8080
 
