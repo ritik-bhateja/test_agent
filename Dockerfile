@@ -38,4 +38,4 @@ COPY . .
 
 # Use the full module path
 
-CMD ["python", "-m", "Backend.main"]
+CMD ["opentelemetry-instrument", "python", "-m", "Backend.main"]
