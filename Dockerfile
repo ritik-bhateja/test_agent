@@ -27,11 +27,11 @@ RUN apt-get update && \
 RUN pip install --no-cache-dir boto3
 
 # User
-# RUN useradd -m -u 1000 bedrock_agentcore
+RUN useradd -m -u 1000 bedrock_agentcore
 USER bedrock_agentcore
 
 COPY . .
 
-EXPOSE 9000 8000 8080
+EXPOSE 8080
 
 CMD ["opentelemetry-instrument", "python", "-m", "Backend.main"]
