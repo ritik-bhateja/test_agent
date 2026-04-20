@@ -19,7 +19,7 @@ RUN uv pip install -r requirements.txt
 
 
 
-RRUN pip install --no-cache-dir aws-opentelemetry-distro
+RUN pip install --no-cache-dir aws-opentelemetry-distro
 
 
 # Signal that this is running in Docker for host binding logic
