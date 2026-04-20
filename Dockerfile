@@ -16,10 +16,21 @@ COPY Backend/requirements.txt requirements.txt
 # Install from requirements file
 RUN uv pip install -r requirements.txt
 
-
-
-
-RUN pip install --no-cache-dir aws-opentelemetry-distro
+# Install system deps + Python deps in one layer (better caching & smaller image)
+RUN apt-get update && \
+    # Fix CVE (libc6 + dpkg)
+    apt-get install -y --only-upgrade libc6 dpkg || apt-get install -y libc6 dpkg && \
+    # Minimal required packages
+    apt-get install -y --no-install-recommends ca-certificates && \
+    \
+    # Python setup
+    pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir aws-opentelemetry-distro boto3 && \
+    \
+    # Cleanup (VERY important for image size)
+    apt-get purge -y --auto-remove && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /root/.cache/pip /tmp/*
 
 
 # Signal that this is running in Docker for host binding logic
